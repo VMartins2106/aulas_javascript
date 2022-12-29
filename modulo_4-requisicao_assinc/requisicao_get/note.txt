@@ -1,0 +1,66 @@
+
+
+UMA REQUISIÇÃO É QUANDO VOCÊ CHAMA UMA INFORMAÇÃO EXTERNA
+
+JSON: JavaScript Object Notation
+É usado para fazer a comunicação entre requisições
+(json é uma das formas desta comunicação)
+
+-------------------------------------------------------------------
+
+exemplo criando um json
+
+let pessoa = {
+    nome: 'Victor',
+    idade: 90
+} --> ISTO JÁ É UM OBJETO
+
+let pessoa ={
+    nome: 'Victor',
+    idade: 90,
+    caracteristicas: ['sorridente','maravilhoso'] 
+} --> ISTO É UM ARRAY DENTRO DE UM OBJETO
+
+let pessoa ={
+    nome: 'Victor',
+    idade: 90,
+    caracteristicas: ['sorridente','maravilhoso'],
+    estetica: {
+        altura: 1.70,
+        peso: 80
+    }
+} --> ISTO É UM OBJETO DENTRO DE UM OBJETO
+
+-------------------------------------------------------------------
+
+O JSON.parse() pede uma string que dentro possui um json,
+assim, podemos salvar dentro de uma variável
+O json em string tem que estar em uma só linha para dar certo
+
+O JSON.stringify() faz o oposto do JSON.parse, pois transforma
+um objeto em uma string que encorpora o objeto
+
+-------------------------------------------------------------------
+
+CÓDIGO SÍNCRONO E CÓDIGO ASSÍNCRONO:
+
+Sincrono: SÓ EXECUTA A PRÓXIMA QUANDO A ATUAL FOR FINALIZADA
+Assincrono: EXECUTA A PRÓXIMA INDEPENDENTEMENTE
+
+-------------------------------------------------------------------
+
+CALLBACKS: 
+
+Quando algo acontecer, execute tal função, sem alterar o resto do código
+
+-------------------------------------------------------------------
+
+PROMISSES:
+
+Informa que algo pode, ou não, chegar a qualquer momento, como uma promessa
+Não interfere no restante do código, pois executa o que pode e prepara o que
+é solicitado
+
+-------------------------------------------------------------------
+
+O RESTO ESTÁ MELHOR EXPLICADO COM CÓDIGO EM 'script.js'

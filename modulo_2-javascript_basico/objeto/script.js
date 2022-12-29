@@ -63,3 +63,59 @@ let pessoa = {
 }
 console.log(pessoa.tudo())
 // CASO USE () =>, O 'THIS' NÃO EXISTE, ENTÃO NAO TEM COMO ACESSAR NADA DALI DE DENTRO
+
+// DESCONSTRUINDO UM OBJETO
+
+let pessoaObj = {
+    nome: 'Victor',
+    sobrenome: 'Martins',
+    idade: 18,
+    social: {
+        facebook: 'sadsjkda',
+        instagram: 'jsdhfdhf'
+    }
+}
+
+/* AO INVÉS DE FAZERMOS ISSO:
+let nome = pessoaObj.nome
+let sobrenome = pessoaObj.sobrenome
+let idade = pessoaObj.idade
+*/
+// FAZEMOS ISSO:
+ 
+let { nome: nomePessoa, sobrenome: sobrenomePessoa, idade: idadePessoa = 0} = pessoaObj
+// OS DOIS PONTOS E O NOVO NOME SERVE PARA RENOMEARMOS A VARIÁVEL
+// AGORA TEMOS AS 3 VARIÁVEIS QUE QUEREMOS
+// O IGUAL SERVE PARA CASO SEJA UNDEFINED, OU SEJA, VAZIO, COLOCAMOS UM VALOR PADRÃO
+
+let { facebook, instagram } = pessoa.social
+// PEGAMOS OS VALORES DO OBJETO DENTRO DO OBJETO
+
+// PEGANDO VALORES NORMAIS E VALORES OBJETOS:
+let { nome: nomeSocial, idade = 0, social:{instagram:insta}} = pessoa
+// ENTRAMOS EM 'social' E INFORMAMOS, DENTRO DE CHAVES, O QUE QUEREMOS
+
+let pessoaObjeto = {
+    nome: 'Victor',
+    sobrenome: 'Martins',
+    idade: 18,
+    social: {
+        facebook: 'sadsjkda',
+        instagram: {
+            url: '@mxrtinsrx',
+            seguidores: 90
+        }
+    }
+}
+
+//PEGANDO O VALOR DE UM OBJETO DENTRO DE UM OBJETO DENTRO DE UM OBJETO
+let {social:{instagram:{url:instaFinal,seguidores}}} = pessoa
+
+// RESGATANDO INFORMAÇÃO ATRAVÉS DE UMA FUNÇÃO
+function pegarNomeCompleto(obj){
+    let nome = obj.nome
+    let sobre = obj.sobrenome
+    return `${nome} ${sobre}`
+}
+console.log(pegarNomeCompleto(pessoaObjeto))
+// ENVIAMOS QUAL É O OBJETO E RESGATAMOS DENTRO DA FUNÇÃO
